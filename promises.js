@@ -39,7 +39,7 @@ function makeSomethingElse() {
 
 makeSomething().then((res) => makeSomethingElse()).then(res => console.log(res));
 
-makeSomething().then(() => {makeSomethingElse()}).then(res => console.log(res));
+makeSomething().then((res) => {makeSomethingElse()}).then(res => console.log(res));
 
 makeSomething().then(makeSomethingElse).then(res => console.log(res));
 
@@ -88,3 +88,15 @@ makeSomething()
 
 
 //first then 1      catch err     third then undefined      finally undefined     last then 1
+
+
+Promise.reject('1')
+.then(data => console.log(data))
+.then(() => Promise.reject('2'))
+.catch(err => console.log(err))
+.then(() => console.log('потомy'))
+
+Promise.resolve()
+.then(() => console.log(4))
+.then(() => console.log(5))
+.then(() => console.log(6));

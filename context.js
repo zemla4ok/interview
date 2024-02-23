@@ -10,8 +10,8 @@ function sayHi() {
 user.f = sayHi;
 admin.f = sayHi;
 
-user.f();
-admin.f();
+user.f();   //
+admin.f();  //
 
 // Vas  Paul
 
@@ -27,3 +27,35 @@ hi();
 
 // undefined
 // + как сделать, чтобы было не undefined
+
+
+// ***************** 3 *****************
+
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(
+      student => console.log(this.title + ': ' + student)
+    );
+  }
+};
+
+group.showList();
+
+
+
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(function(student) {
+      console.log(this.title + ': ' + student)
+    });
+  }
+};
+
+group.showList();
+
